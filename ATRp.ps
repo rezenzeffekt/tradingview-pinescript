@@ -1,0 +1,4 @@
+//@version=5
+indicator(title="Average True Range (with RMA smoothing) in Percent of Average Price (hl2)", shorttitle="ATRp", overlay=false)
+length = input.int(title="Length", defval=14, minval=1)
+plot(ta.atr(length) / ((math.max(high, close[1]) + math.min(low, close[1])) / 2) * 100, title = "ATRp", color=color.new(#FF9800, 0))
